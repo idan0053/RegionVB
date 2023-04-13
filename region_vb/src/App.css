@@ -1,38 +1,143 @@
-.App {
-  text-align: center;
+/*
+
+Innehållsförteckning
+
+1. Log in page
+2. Navbar
+
+*/
+
+
+/* 1. Log in page */
+
+.login {
+  width: 100vw;
+  height: 100vh;
+  background-color: #004F9E;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.background-design {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.welcome-content-container {
+  width: 32rem;
+  height: 12.5rem;
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  color: #FFFFFF;
 }
 
-.App-link {
-  color: #61dafb;
+.welcome-content-container h1 {
+  width: 20rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.welcome-info {
+  width: 15rem;
+  font-size: 0.75rem;
+  margin-top: 1rem;
+}
+
+.welcome-right-wrapper h4 {
+  margin-bottom: 1rem;
+}
+
+.position-bottom {
+  position: absolute;
+  bottom: 0;
+  width: 13rem;
+}
+
+.welcome-right-wrapper label {
+  padding: .6rem 0 .2rem;
+  font-size: .75rem;
+}
+
+.welcome-right-wrapper input {
+  margin-bottom: .1rem;
+  border-radius: 5px;
+  border-style: none;
+  width: 10rem;
+  height: 1.4rem;
+  padding-left: .2rem;
+  font-size: .75rem;
+}
+
+.welcome-left-wrapper {
+  padding-left: .5rem;
+}
+
+.password-input {
+  -webkit-text-security: disc;
+}
+
+.log-in-btn {
+  width: 1.6rem;
+  height: auto;
+  margin-left: .8rem;
+  position: absolute;
+  bottom: 0;
+  cursor: pointer;
+}
+
+.log-in-btn:hover {
+  color: #a6e7a2;
+}
+
+
+
+/* 2. Navbar */
+
+.navbar {
+  display: flex;
+  width: 60%;
+  background-image: url("../public/navbar.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding: 1vh 1vw 7vh;
+  color: #FFFFFF;
+  position: absolute;
+}
+
+.menu-icon {
+  cursor: pointer;
+  margin: 2vh 0;
+}
+
+.nav-list {
+  background-color: #00000020;
+  color: #000000;
+  border-radius: 0 0 25% 0;
+  position: absolute;
+  padding: 10vh 3vw 5vh 2vw;
+  top: 9vh;
+  left: 0;
+  z-index: -1;
+}
+
+.nav-links {
+  font-size: 14px;
+  list-style: none;
+  margin-bottom: .8rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #000000;
+  font-weight: 700;
+}
+
+
+.profil-icon {
+  margin-top: 2.4vh;
+  margin-left: 1.3vw;
+  cursor: pointer;
 }
