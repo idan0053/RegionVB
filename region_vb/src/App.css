@@ -2,8 +2,11 @@
 
 Innehållsförteckning
 
-1. Log in page
+1. Login page
 2. Navbar
+3. Content page
+  3.1. Search & Filter
+  3.2. Content
 
 */
 
@@ -75,10 +78,6 @@ Innehållsförteckning
   padding-left: .5rem;
 }
 
-.password-input {
-  -webkit-text-security: disc;
-}
-
 .log-in-btn {
   width: 1.6rem;
   height: auto;
@@ -93,18 +92,19 @@ Innehållsförteckning
 }
 
 
-
 /* 2. Navbar */
 
 .navbar {
   display: flex;
-  width: 60%;
-  background-image: url("../public/navbar.png");
-  background-size: contain;
-  background-repeat: no-repeat;
+  width: 50rem;
   padding: 1vh 1vw 7vh;
   color: #FFFFFF;
   position: absolute;
+  top: 0;
+}
+
+.nav-background {
+  width: 50rem;
 }
 
 .menu-icon {
@@ -113,12 +113,12 @@ Innehållsförteckning
 }
 
 .nav-list {
-  background-color: #00000020;
+  background-color: #D9D9D9;
   color: #000000;
   border-radius: 0 0 25% 0;
-  position: absolute;
   padding: 10vh 3vw 5vh 2vw;
-  top: 9vh;
+  position: absolute;
+  top: 3.8rem;
   left: 0;
   z-index: -1;
 }
@@ -135,9 +135,122 @@ Innehållsförteckning
   font-weight: 700;
 }
 
-
 .profil-icon {
   margin-top: 2.4vh;
   margin-left: 1.3vw;
   cursor: pointer;
+  z-index: 3;
+}
+
+.log-out-btn {
+  width: 4.2rem;
+  height: 1.5rem;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  border: none;
+  margin: 1rem 2rem;
+  color: #004F9E;
+  background-color: transparent;
+  font-weight: 600;
+}
+
+/* 3. Content page */
+
+.content-header {
+  display: flex;
+  position: absolute;
+  top: 8rem;
+  left: 3rem;
+  width: 90vw;
+  z-index: -2;
+}
+
+.content-info-text {
+  font-size: .75rem;
+}
+
+/* 3.1. Search & Filter */
+
+.find-content-wrapper {
+  font-size: 1rem;
+  position: absolute;
+  right: 0;
+}
+
+.search-form {
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  background-color: #D9D9D9;
+  border: none;
+  width: 10rem;
+  height: 2rem;
+  padding: 0 .6rem;
+  font-size: .75rem;
+  border-radius: 20px 0 0 20px;
+  margin: 0;
+}
+
+.search-input:focus {
+  outline: none;
+}
+
+.search-button {
+  width: 2rem;
+  height: 2rem;
+  border: none;
+  background-color: #B0B0B0;
+  border-radius: 0 20px 20px 0;
+  cursor: pointer;
+}
+
+.search-button:hover {
+  background-color: #004F9E;
+}
+.search-button:hover .search-icon{
+  color: #FFFFFF;
+}
+
+.filter-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.filter-bar {
+  background-color: #D9D9D9;
+  width: 10rem;
+  height: 1rem;
+  font-size: .75rem;
+  padding: .5rem .6rem;
+  margin: .5rem 0;
+  border-radius: 20px 0 0 20px;
+}
+
+.filter-button {
+  width: 2rem;
+  height: 2rem;
+  border: none;
+  background-color: #B0B0B0;
+  border-radius: 0 20px 20px 0;
+  cursor: pointer;
+}
+
+.filter-icon {
+  margin-top: .4rem;
+}
+
+/* 3.2. Content */
+
+.material-wrapper {
+  width: 100%;
+  height: 10rem;
+  background-color: #D9D9D9;
+  position: absolute;
+  top: 14rem;
+  z-index: -2;
 }

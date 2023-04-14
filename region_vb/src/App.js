@@ -5,27 +5,31 @@ import Content from './pages/ContentPage'
 
 function App() {
   const adminUser = {
-    id: "admin",
-    password: "lösenord"
+    id: "Admin",
+    password: "Admin"
   }
 
   const [user, setUser] = useState({id: ""});
-  const [errorMessage, setErrorMessage] = useState("");
+  //const [errorMessage, setErrorMessage] = useState("");
 
   const Login = details => {
     console.log(details);
+    if (details.id === adminUser.id && details.password === adminUser.password) {
+      setUser({ id: details.id })
+    }
   }
 
-  /*const Logout = () => {
+  const Logout = () => {
     console.log("Logout");
-  }*/
+    setUser({ id: "" })
+  }
 
   return (
     <div className="App">
       {(user.id !== "") ? (
-        <Content/>
+        <Content Logout={Logout}/>
       ) : (
-        <LogInPage Login={Login} Error={errorMessage}/>
+        <LogInPage Login={Login} /*Error={errorMessage}*//>
       )}
     </div>
   );

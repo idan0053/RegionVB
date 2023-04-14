@@ -13,7 +13,7 @@ function LogIn({ Login, Error }) {
     return (
             <div className="position-bottom">
                 <h4>Logga in</h4>
-                <form onSubmit={submit}>
+                <form>
                 <label htmlFor="username">Användar-id:</label>
                 <input
                     className="user-id-input"
@@ -32,7 +32,7 @@ function LogIn({ Login, Error }) {
                     value={details.password}
                     required
                 />
-                <CgArrowRightO className="log-in-btn" type="submit"/>
+                    <CgArrowRightO className="log-in-btn" onClick={submit} />
                 </form>
             </div>
      );
