@@ -6,7 +6,6 @@ function LogIn({ Login }) {
 
     const submit = e => {
         e.preventDefault();
-
         Login(details);
     }
 

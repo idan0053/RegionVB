@@ -21,7 +21,7 @@ function HamburgerMenu() {
                         <a href="/">Start</a>
                     </li>
                     <li className="nav-links">
-                        <p>Läromedel</p>
+                    <a href="/Läromedel">Läromedel</a>
                     </li>
                     <li className="nav-links">
                         <p>Support</p>

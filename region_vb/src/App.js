@@ -1,9 +1,12 @@
 import { useState } from 'react';
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import LogInPage from './pages/LogInPage';
 import Content from './pages/ContentPage';
+import MaterialPage from './pages/MaterialPage';
 
 
 function App() {
+
   const adminUser = {
     id: "Admin",
     password: "Admin"
@@ -22,13 +25,22 @@ function App() {
   }
 
   return (
-      <div className="App">
-        {(user.id !== "") ? (
-          <Content Logout={Logout}/>
-        ) : (
-          <LogInPage Login={Login}/>
-        )}
-      </div>
+
+        <>
+          {(user.id !== "") ? (
+            <Content Logout={Logout}/>
+          ) : (
+            <Router>
+            <Routes>
+            <Route path='/' element= {<LogInPage Login={Login} />} />
+            <Route path="/Läromedel" element={<Content />} />
+            <Route path="/Material" element={<MaterialPage />} />
+            </Routes>
+          </Router>
+          )}
+
+      </>
+
   );
 }
 
