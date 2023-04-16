@@ -15,7 +15,7 @@ function Thumbnails({covers, search}) {
                     {covers.filter((cover) => {
                         return search.toLowerCase() === '' ? cover : cover.name.toLowerCase().includes(search)
                     }).map((cover) => (
-                            <a href="/material">
+                            //<a href="/material">
                             <img
                             src= {cover.img}
                             alt="omslagsbild"
@@ -23,7 +23,7 @@ function Thumbnails({covers, search}) {
                             key={cover.id}
                             //onClick={() => navigate("/material")}
                             />
-                            </a>
+                            //</a>
                     ))}
                 </div>
             </section>

@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import LogInPage from './pages/LogInPage';
-import MaterialPage from './pages/MaterialPage';
 import Content from './pages/ContentPage';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
 
 function App() {
   const adminUser = {
@@ -23,7 +22,6 @@ function App() {
   }
 
   return (
-    <BrowserRouter>
       <div className="App">
         {(user.id !== "") ? (
           <Content Logout={Logout}/>
@@ -31,12 +29,6 @@ function App() {
           <LogInPage Login={Login}/>
         )}
       </div>
-
-      <Routes>
-        <Route path='/' element={<LogInPage/>}/>
-        <Route path='/material' element={<MaterialPage/>}/>
-      </Routes>
-    </BrowserRouter>
   );
 }
 

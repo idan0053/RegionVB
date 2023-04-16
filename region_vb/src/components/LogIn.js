@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { CgArrowRightO } from 'react-icons/cg';
 
-function LogIn({ Login, Error }) {
+function LogIn({ Login }) {
     const [details, setDetails] = useState({ id: "", password: ""});
 
     const submit = e => {
