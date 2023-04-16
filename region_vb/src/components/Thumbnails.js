@@ -1,19 +1,17 @@
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import { useHistory } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
 import MaterialPage from '../pages/MaterialPage';
 
 function Thumbnails({covers, search}) {
 
-    const history = useHistory();
+    const navigate = useNavigate();
 
     const pathToMaterial = () => {
-      history.push('/Läromedel');
+      navigate.push('/Läromedel');
     };
 
     return (
         <>
-        <Router>
-             <section className='thumbnail-wrapper'>
+            <section className='thumbnail-wrapper'>
                 <div className='material-wrapper'>
                     {covers.filter((cover) => {
                         return search.toLowerCase() === '' ? cover : cover.name.toLowerCase().includes(search)
@@ -37,12 +35,19 @@ function Thumbnails({covers, search}) {
                     ))}
                 </div>
             </section>
-
-
-        <Route path="/Läromedel" component={MaterialPage} />
-      </Router>
         </>
      );
 }
 
-export default Thumbnails;
+function App() {
+    return (
+        <Router>
+            <Routes>
+            <Route exact path="/" element={<Thumbnails/>} />
+            <Route path="/Läromedel" element={<MaterialPage/>} />
+            </Routes>
+        </Router>
+    );
+}
+
+export default App;
