@@ -24,7 +24,7 @@ function HamburgerMenu() {
                     <a href="/Läromedel">Läromedel</a>
                     </li>
                     <li className="nav-links">
-                        <p>Support</p>
+                        <a href='/Support'>Support</a>
                     </li>
                 </ul>
             }

@@ -1,27 +1,24 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-
+//import { useNavigate } from "react-router-dom";
 function Thumbnails({ covers, search }) {
-  const [clickedMaterial, setClickedMaterial] = useState(null);
-  const navigate = useNavigate();
 
-  const handleClick = (index) => {
+  //const navigate = useNavigate();
+
+  const handleThumbnailClick = (index) => {
     const clicked = covers[index];
-    navigate("/Material", { state: { material: clickedMaterial } });
-    setClickedMaterial(clicked);
+    //navigate('/Material');
+    console.log(clicked)
   };
 
   return (
     <>
       <section className="thumbnail-wrapper">
         <div className="material-wrapper">
-          {covers
-            .filter((cover) => {
+          {covers.filter((cover) => {
               return search.toLowerCase() === ""
                 ? cover
                 : cover.name.toLowerCase().includes(search);
             })
-            .map((cover, index) => (
+            .map((cover) => (
               <img
                 src={cover.img}
                 alt="omslagsbild"
@@ -33,8 +30,7 @@ function Thumbnails({ covers, search }) {
       </section>
       <section className="thumbnail-wrapper">
         <div className="material-wrapper">
-          {covers
-            .filter((cover) => {
+          {covers.filter((cover) => {
               return search.toLowerCase() === ""
                 ? cover
                 : cover.name.toLowerCase().includes(search);
@@ -43,7 +39,7 @@ function Thumbnails({ covers, search }) {
               <h5
                 className="material-name"
                 key={cover.id}
-                onClick={() => handleClick(index)}
+                onClick={() => handleThumbnailClick(index)}
               >
                 {cover.name}
               </h5>

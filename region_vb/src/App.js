@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import LogInPage from './pages/LogInPage';
 import Content from './pages/ContentPage';
 import MaterialPage from './pages/MaterialPage';
+import Support from './pages/Support'
+
 
 
 function App() {
@@ -34,6 +36,7 @@ function App() {
             <Routes>
             <Route path='/' element= {<LogInPage Login={Login} />} />
             <Route path="/Läromedel" element={<Content />} />
+            <Route path="/Support" element={<Support />} />
             <Route path="/Material" element={<MaterialPage />} />
             </Routes>
           </Router>
