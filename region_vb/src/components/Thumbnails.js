@@ -1,13 +1,12 @@
-import { HashRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
-import MaterialPage from '../pages/MaterialPage';
+//import { useNavigate } from "react-router-dom";
 
 function Thumbnails({covers, search}) {
 
-    const navigate = useNavigate();
+    //const navigate = useNavigate();
 
-    const pathToMaterial = () => {
-      navigate.push('/Läromedel');
-    };
+    //const pathToMaterial = () => {
+        //navigate('/material');
+    //};
 
     return (
         <>
@@ -16,13 +15,15 @@ function Thumbnails({covers, search}) {
                     {covers.filter((cover) => {
                         return search.toLowerCase() === '' ? cover : cover.name.toLowerCase().includes(search)
                     }).map((cover) => (
+                            <a href="/material">
                             <img
                             src= {cover.img}
                             alt="omslagsbild"
                             className="cover"
                             key={cover.id}
-                            onClick={pathToMaterial}
+                            //onClick={() => navigate("/material")}
                             />
+                            </a>
                     ))}
                 </div>
             </section>
@@ -39,15 +40,4 @@ function Thumbnails({covers, search}) {
      );
 }
 
-function App() {
-    return (
-        <Router>
-            <Routes>
-            <Route exact path="/" element={<Thumbnails/>} />
-            <Route path="/Läromedel" element={<MaterialPage/>} />
-            </Routes>
-        </Router>
-    );
-}
-
-export default App;
+export default Thumbnails;
